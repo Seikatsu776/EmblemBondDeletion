@@ -1,0 +1,40 @@
+[package]
+name = "delete_guest_bond"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[package.metadata.skyline]
+titleid = "0100a6301214e000"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+engage-il2cpp = { git = "https://github.com/DivineDragonFanClub/engage-il2cpp", tag = "0.1.2", version = "0.1.2" , features = [
+    "app-eventscript",
+    "app-eventscript-types",
+    "app-godbondholder",
+    "app-godpool",
+    "app-godunit",
+    "app-itemdata",
+    "app-itemdata-types",
+    "app-scriptutil",
+    "app-scriptutil-types",
+    "app-unit",
+    "app-unit-types",
+    "moon_sharp-interpreter-dynvalue",
+    "moon_sharp-interpreter-dynvalue-types",
+    "system-collections-generic-list_1",
+    "system-object",
+] }
+cobapi = { git = "https://github.com/triabolicals/cobapi" }
+skyline = "0.6.0"
+unity-nx = { git = "https://github.com/DivineDragonFanClub/unity-nx", tag = "0.1.2" }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
